@@ -1,0 +1,6 @@
+<footer>
+    <hr>
+    <div class="footer-text">
+        <div>{{- (site.Copyright | markdownify) | default (printf "© %d %s" now.Year site.Title) -}}</div>
+    </div>
+</footer>

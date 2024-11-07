@@ -1,0 +1,27 @@
+{{- define "main" }}
+
+<p><strong>Submitter : </strong> {{ .Params.submitter }}</p>
+<p><strong>Date: </strong>{{ .Params.date | dateFormat "2 January 2006" }}</p>
+<p><strong>Bounty : </strong> {{ .Params.bounty }}</p>
+<p><strong>Vulnerabilities :</br></strong></p>
+<ul class="vulnerabilitiesList single">
+  {{ range (.GetTerms "vulnerabilities") }}
+  <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+  {{ end }}
+</ul>
+<p><strong>Programs :</br></strong></p>
+<ul class="programsList single">
+  {{ range (.GetTerms "programs") }}
+  <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+  {{ end }}
+</ul>
+<p><strong>Authors :</br></strong></p>
+<ul class="authorsList single">
+  {{ range (.GetTerms "authors") }}
+  <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+  {{ end }}
+</ul>
+
+<p><strong>Link : </br></strong> <a href="{{ .Params.link }}" target="_blank" rel="noopener">{{ .Params.link }}</a></p>
+
+{{- end }}{{- /* end main */ -}}

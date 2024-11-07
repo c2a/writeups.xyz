@@ -1,0 +1,70 @@
+baseURL: https://writeups.xyz/
+languageCode: en-us
+title: writeups.xyz
+theme: "my-theme"
+pygmentsUseClasses: true
+enableInlineShortcodes: true
+Copyright: © writeups.xyz
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  # showDescriptioninHome: true
+  hideAllVulnerabilitiesinHome: true
+  # searchBoxPlaceholder: "Type here to search..."
+  titleIcon: index.png
+  headers:
+    key: Title
+    value: Vulnerabilities
+    value2: Programs
+    value3: Authors
+    # value: Descriptions
+
+permalinks:
+  vulnerabilities: "vulnerabilities/:slug"
+  programs: "programs/:slug"
+  authors: "authors/:slug"
+  submitters: "submitters/:slug"
+
+taxonomies:
+  vulnerability: "vulnerabilities"
+  program: "programs"
+  author: "authors"
+  submitter: "submitters"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # for search
+
+# Enable pagination
+paginate: 25  # Change this number to set posts per page
+
+privacy:
+  vimeo:
+    disabled: false
+    simple: true
+  twitter:
+    disabled: false
+    enableDNT: true
+    simple: true
+  instagram:
+    disabled: false
+    simple: true
+  youtube:
+    disabled: false
+    privacyEnhanced: true
+
+services:
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true

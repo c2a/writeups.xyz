@@ -1,0 +1,80 @@
+<div class="tableContainer">
+<table class="tableList">
+  <thead>
+    <tr>
+      {{- with site.Params.headers }}
+      <th>{{ .key }}</th>
+      <th>{{ .value }}</th>
+      <th>{{ .value2 }}</th>
+      <th>{{ .value3 }}</th>
+      {{- end }}
+    </tr>
+  </thead>
+  <tbody id="tableListBody">
+    {{- $paginator := .Paginate (.RegularPages) }}
+    {{- range $paginator.Pages }}
+    <tr>
+      <td class="tdTitle"><a href="{{ .Permalink }}">{{ .Title }}</a></td>
+      <td>
+        {{- if site.Params.showDescriptioninHome }}
+        {{ .Description }}
+        {{- else }}
+        <ul class="vulnerabilitiesList">
+          {{- range (.GetTerms "vulnerabilities") }}
+          <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </ul>
+        {{- end }}
+      </td>
+      <td>
+        {{- if site.Params.showDescriptioninHome }}
+        {{ .Description }}
+        {{- else }}
+        <ul class="programsList">
+          {{- range (.GetTerms "programs") }}
+          <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </ul>
+        {{- end }}
+      </td>
+      <td>
+        {{- if site.Params.showDescriptioninHome }}
+        {{ .Description }}
+        {{- else }}
+        <ul class="authorsList">
+          {{- range (.GetTerms "authors") }}
+          <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+          {{- end }}
+        </ul>
+        {{- end }}
+      </td>
+    </tr>
+    {{- end }}
+  </tbody>
+</table>
+</div>
+
+<div id="paginationLayout" class="pagination">
+  <div class="pagination-container">
+    {{ if $paginator.HasPrev }}
+    <div class="all-vulnerabilities">
+      <ul class="vulnerabilitiesList">
+        <li><a href="{{ $paginator.Prev.URL }}">Prev</a></li>
+      </ul>
+    </div>
+    {{ end }}
+
+    <div class="pagination-info">
+      <span>Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+    </div>
+
+    {{ if $paginator.HasNext }}
+    <div class="all-vulnerabilities">
+      <ul class="vulnerabilitiesList">
+        <li><a href="{{ $paginator.Next.URL }}">Next</a></li>
+      </ul>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
