@@ -22,8 +22,7 @@ This project is built using Hugo, a fast static site generator. To build the sit
 1.  Install Hugo: Follow the installation instructions for your operating system at [https://gohugo.io/getting-started/installing/](https://gohugo.io/getting-started/installing/).
 2.  Clone the repository: 
 
-    git clone [https://github.com/c2a/writeups.xyz.git](https://github.com/c2a/writeups.xyz.git) 
-    cd writeups.xyz
+    git clone [https://github.com/c2a/writeups.xyz.git](https://github.com/c2a/writeups.xyz.git) && cd writeups.xyz
 
 3.  Run the Hugo development server: 
 
