@@ -1,0 +1,18 @@
+**/.hugo_build.lock
+# Hugo build directory
+/public/
+
+# Hugo cache directory
+/resources/_gen/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+*.log
+*.tmp

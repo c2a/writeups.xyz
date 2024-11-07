@@ -1,0 +1,11 @@
+{{- define "main" }}
+
+<div class="infoText">{{ .Content }}</div>
+
+{{- partial "vulnerabilities-list.html" . }}
+
+{{- partial "searchbox.html" . }}
+
+{{- partial "table-list.html" . }}
+
+{{- end }}{{- /* end main */ -}}

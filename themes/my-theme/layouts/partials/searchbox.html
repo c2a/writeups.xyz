@@ -1,0 +1,14 @@
+<div class="searchBox">
+    <input id="search" autofocus type="search" placeholder=' 
+    {{- with site.Params.headers }}
+    {{- print "Search among" }}
+    {{- printf " %d %s " (len site.RegularPages) "writeups" }}
+    {{- print ", " }}
+    {{- printf " %d %s" (len site.Taxonomies.vulnerabilities) (.value | pluralize | lower) }}
+    {{- print ", " }}
+    {{- printf " %d %s" (len site.Taxonomies.programs) "programs" }}
+    {{- print " and" }}
+    {{- printf " %d %s..." (len site.Taxonomies.authors) "authors" }}
+    {{- end -}}
+    ' autocomplete="off" />
+</div>

@@ -1,0 +1,31 @@
+{{ $scratch := newScratch }}
+{{- $scratch.Add "index" slice -}}
+{{- range site.RegularPages -}}
+    {{- $scratch.Add "vulnerabilities" slice -}}
+    {{- range (.GetTerms "vulnerabilities") }}
+        {{- $scratch.Add "vulnerabilities" (dict "title" .LinkTitle "permalink" .RelPermalink) }}
+    {{- end }}
+    
+    {{- $scratch.Add "programs" slice -}}
+    {{- range (.GetTerms "programs") }}
+        {{- $scratch.Add "programs" (dict "title" .LinkTitle "permalink" .RelPermalink) }}
+    {{- end }}
+
+    {{- $scratch.Add "authors" slice -}}
+    {{- range (.GetTerms "authors") }}
+        {{- $scratch.Add "authors" (dict "name" .LinkTitle "permalink" .RelPermalink) }}
+    {{- end }}
+
+    {{- $scratch.Add "index" (dict "title" .Title 
+                                  "vulnerabilities" ($scratch.Get "vulnerabilities") 
+                                  "programs" ($scratch.Get "programs") 
+                                  "authors" ($scratch.Get "authors") 
+                                  "description" .Description 
+                                  "permalink" .RelPermalink 
+                                  "link" .Params.link) -}}
+    
+    {{- $scratch.Delete "vulnerabilities" }}
+    {{- $scratch.Delete "programs" }}
+    {{- $scratch.Delete "authors" }}
+{{- end -}}
+{{- $scratch.Get "index" | jsonify -}}

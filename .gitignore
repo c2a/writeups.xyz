@@ -1,0 +1,28 @@
+**/.hugo_build.lock
+# Hugo generated files
+/public/
+/resources/_gen/
+
+# OS generated files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node modules (if using them)
+node_modules/
+
+# Build artifacts
+*.out
+*.exe
+
+# IDE files (if using any specific IDE)
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

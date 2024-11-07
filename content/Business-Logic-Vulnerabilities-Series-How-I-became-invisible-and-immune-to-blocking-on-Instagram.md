@@ -1,0 +1,21 @@
+---
+submitter: "c2a"
+title: "Business Logic Vulnerabilities Series: How I became invisible and immune to blocking on Instagram!"
+date: "2017-07-31"
+added: "2024-11-03"
+description: ""
+vulnerabilities: [
+    "Logic flaw"
+]
+programs: [
+    "Meta / Facebook"
+]
+authors: [
+    "Ali Kabeel"
+]
+bounty: "undisclosed"
+link: "https://www.seekurity.com/blog/general/business-logic-vulnerabilities-series-how-i-became-invisible-and-immune-to-blocking-on-instagram/"
+---
+
+
+
